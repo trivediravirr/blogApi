@@ -1,0 +1,49 @@
+<html>
+<label>BlogDetails</label>
+<!-- <h1>hello0000,<%= getDetails %></h1> -->
+<table>
+    <tbody>
+
+        <tr>
+            <td>
+                <h4>User Name</h4>
+            </td>
+            <td>
+                <h4>Image</h4>
+            </td>
+            <td>
+                <h4>Blog Name</h4>
+            </td>
+            <td>
+                <h4>Blog Description</h4>
+            </td>
+        </tr>
+
+        <% for(var i=0; i<getDetails.length;i++) { %>
+        <tr>
+            <td><%= getDetails[i].userName%></td>
+            <td><%= getDetails[i].image%></td>
+            <td><%= getDetails[i].blogName%></td>
+            <td><%= getDetails[i].blogDescription%></td>
+
+        </tr>
+        <% } %>
+
+    </tbody>
+</table>
+
+<form method="post" action="/blog">
+    <label>
+        <h4>Create your blog</h4>
+    </label><br>
+    <input type="text" name="userName" placeholder="enter user name" required>
+    <input type="text" name="image" placeholder="choose image" required>
+    <input type="text" name="blogName" placeholder="enter blog name" required><br>
+    <textarea style="margin-top: 5px;" name="blogDescription" placeholder="enter blog description"
+     rows="4" cols="50"  required></textarea>
+    <!-- <input type="text" name="blogDescription" placeholder="enter blog description" > -->
+
+    <input type="submit" value="create blog">
+</form>
+
+</html>
